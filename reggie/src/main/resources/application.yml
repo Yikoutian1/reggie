@@ -18,7 +18,7 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     call-setters-on-nulls: true
     # 这里根据自己项目的包修改，扫描到自己的*xml文件
-    mapper-locations: classpath:/reggie/src/main/java/com/reggie/mapper/*.xml
+    mapper-locations: classpath:com/ithang/reggie/mapper/*.xml
   global-config:
     db-config:
       id-type: ASSIGN_ID

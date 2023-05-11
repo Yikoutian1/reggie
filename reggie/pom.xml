@@ -74,6 +74,11 @@
             <artifactId>druid</artifactId>
             <version>1.2.16</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -84,7 +89,7 @@
                 <configuration>
                     <excludes>
                         <exclude>
-                            <groupId>org.projectlombok</groupId>
+                            <groupId>org.project-lombok</groupId>
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
@@ -94,12 +99,19 @@
         <resources>
             <resource>
                 <directory>src/main/java</directory>
+                <!--所在的目录-->
                 <includes>
-                    <include>**/*.yml</include>
+                    <!--包括目录下的.properties,.xml 文件都会被扫描到-->
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
                 </includes>
-                <filtering>true</filtering>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
             </resource>
             <resource>
                 <directory>src/main/resources</directory>

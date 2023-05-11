@@ -1,8 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="update init_project">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_3_0_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring6_3_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/common/R.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/mapper/EmployeeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/api/category.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/api/combo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/api/food.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/api/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/api/member.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/api/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/404-images/404-cloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/404-images/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/icons/btn_back@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/icons/btn_clean@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/icons/btn_close@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/icons/icon_index.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/icons/icon_upload@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/icons/jine_m-2@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/icons/renshu@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/icons/xiangmujine@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/img_brand01@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/img_denglu_bj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/login/login-l.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/login/login-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/login/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/images/noImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/js/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/js/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/page/category/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/page/combo/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/page/combo/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/page/food/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/page/food/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/page/login/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/page/member/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/page/member/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/page/order/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/plugins/axios/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/plugins/element-ui/fonts/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/plugins/element-ui/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/plugins/element-ui/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/plugins/element-ui/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/plugins/vue/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/fonts/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/icon/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/icon/demo_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/icon/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/icon/iconfont.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/icon/iconfont.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/icon/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/icon/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/icon/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/styles/page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/api/address.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/api/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/api/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/api/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/fonts/DIN-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/fonts/DIN-Medium.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/fonts/PingFangSC-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/fonts/PingFangSC-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/fonts/PingFangSC-Semibold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/cart_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/checked_false.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/checked_true.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/demo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/demo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/demo3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/demo4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/favico.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/headPage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/location.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/locations.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/mainBg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/money.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/noImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/no_order.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/no_wifi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/orders.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/subtract.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/time.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/images/women.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/js/base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/js/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/js/vant.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/page/add-order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/page/address-edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/page/address.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/page/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/page/no-wify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/page/order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/page/pay-success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/page/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/add-order.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/address-edit.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/address.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/no-wify.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/order.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/pay-success.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/user.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/styles/vant.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/templates/null" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/reggie/ReggieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/ReggieApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/resources/application.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
     <option name="PARALLEL_COMPILATION" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -14,21 +174,105 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectId" id="2PQVnu5rc6XasSG31Flki74BWTl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/JavaDemo/reggie/reggie/src/main/java/com/ithang/reggie/config",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
+    "spring.configuration.checksum": "3acf5c7b740d6e2538f3a7b88cf069b3",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\config" />
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\resources" />
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\resources\webResources" />
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\resources\static" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="ReggieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
       <module name="reggie" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.reggie.ReggieApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ithang.reggie.ReggieApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="" />
+      <created>1683389465584</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683389465584</updated>
+      <workItem from="1683389469878" duration="231000" />
+      <workItem from="1683618059470" duration="1166000" />
+      <workItem from="1683619254655" duration="727000" />
+      <workItem from="1683620018356" duration="1831000" />
+      <workItem from="1683621883458" duration="601000" />
+      <workItem from="1683803919940" duration="8857000" />
+    </task>
+    <task id="LOCAL-00001" summary="update init_project">
+      <created>1683389606806</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683389606806</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="update init_project" />
+    <option name="LAST_COMMIT_MESSAGE" value="update init_project" />
   </component>
 </project>
