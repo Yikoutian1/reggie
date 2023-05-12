@@ -1,6 +1,7 @@
 package com.ithang.reggie.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ithang.reggie.common.R;
 import com.ithang.reggie.entity.Employee;
 import com.ithang.reggie.service.EmployeeService;
@@ -8,10 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
@@ -99,5 +97,18 @@ public class EmployeeController {
         // 此时的save为IService中的,mybatis-plus里面的
         employeeService.save(employee);
         return R.success("新增员工成功");
+    }
+
+    /**
+     * 员工信息的分页查询
+     * @param page
+     * @param pageSize
+     * @param name
+     * @return
+     */
+    @GetMapping("/page")
+    public R<Page> page(int page,int pageSize,String name){// Page泛型是mybatisPlus里面的分页泛型,其中name为搜索框框里面的
+        log.info("page = {},pageSize = {},name = {}",page,pageSize,name);
+        return null;
     }
 }

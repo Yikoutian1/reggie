@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="update login and logout">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/common/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/filter/LoginCheckFilter.java" afterDir="false" />
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="更新拦截，新增员工">
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/config/MybatisPlusConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/ReggieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/ReggieApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/resources/backend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +113,10 @@
       <workItem from="1683621883458" duration="601000" />
       <workItem from="1683803919940" duration="9432000" />
       <workItem from="1683815567444" duration="236000" />
-      <workItem from="1683892065632" duration="7764000" />
+      <workItem from="1683892065632" duration="7949000" />
+      <workItem from="1683900652665" duration="171000" />
+      <workItem from="1683900905243" duration="105000" />
+      <workItem from="1683901047897" duration="1595000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -133,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683815125129</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="更新拦截，新增员工">
+      <created>1683900582398</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683900582398</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +160,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="update init_project" />
     <MESSAGE value="update login and logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="update login and logout" />
+    <MESSAGE value="更新拦截，新增员工" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新拦截，新增员工" />
   </component>
 </project>
