@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
+
 /**
  * @ClassName EmployeeController
  * @Description TODO
@@ -75,5 +77,27 @@ public class EmployeeController {
         // 清理Session中保存的当前登录员工的id
         request.getSession().removeAttribute("employee");
         return R.success("退出成功");
+    }
+
+    /**
+     * 新增员工
+     * @param employee
+     * @return
+     */
+    @PostMapping
+    public R<String> save(HttpServletRequest request,@RequestBody Employee employee){
+        // 设置初始密码,md5加密处理
+        employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
+
+        employee.setCreateTime(LocalDateTime.now());
+        employee.setUpdateTime(LocalDateTime.now());
+        // 获取当前登录用户id
+        Long empId = (Long) request.getSession().getAttribute("employee");
+        employee.setCreateUser(empId);
+
+        employee.setUpdateUser(empId);
+        // 此时的save为IService中的,mybatis-plus里面的
+        employeeService.save(employee);
+        return R.success("新增员工成功");
     }
 }
