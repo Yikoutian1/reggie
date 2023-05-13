@@ -7,6 +7,7 @@ import com.ithang.reggie.entity.Employee;
 import com.ithang.reggie.service.EmployeeService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
@@ -82,7 +83,7 @@ public class EmployeeController {
      * @param employee
      * @return
      */
-    @PostMapping
+    @PostMapping()
     public R<String> save(HttpServletRequest request,@RequestBody Employee employee){
         // 设置初始密码,md5加密处理
         employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
@@ -107,8 +108,38 @@ public class EmployeeController {
      * @return
      */
     @GetMapping("/page")
-    public R<Page> page(int page,int pageSize,String name){// Page泛型是mybatisPlus里面的分页泛型,其中name为搜索框框里面的
-        log.info("page = {},pageSize = {},name = {}",page,pageSize,name);
-        return null;
+    public R<Page> page(int page,int pageSize,String name) {// Page泛型是mybatisPlus里面的分页泛型,其中name为搜索框框里面的
+        log.info("page = {},pageSize = {},name = {}", page, pageSize, name);
+        // 构造分页构造器
+        Page pageInfo = new Page(page, pageSize);
+
+        // 构造条件构造器
+        LambdaQueryWrapper<Employee> queryWrapper = new LambdaQueryWrapper<>();
+        // 添加一个过滤条件
+        //                  if(name!=null)
+        queryWrapper.like(StringUtils.isNotEmpty(name), Employee::getName, name);
+        // 添加排序条件
+        queryWrapper.orderByDesc(Employee::getUpdateTime);
+        // 执行查询
+        employeeService.page(pageInfo, queryWrapper);
+        return R.success(pageInfo);
+    }
+
+    /**
+     * 通用update方法,根据id修改员工信息
+     * @param request
+     * @return
+     */
+    @PutMapping()
+    public R<String> update(HttpServletRequest request,@RequestBody Employee employee){
+        // 获取当前登录用户id (Long强转精度丢失)
+        Long empId = (Long) request.getSession().getAttribute("employee");
+
+        employee.setUpdateTime(LocalDateTime.now());
+        employee.setUpdateUser(empId);
+        // 这里使用的是mybatisPlus里面的sql
+        employeeService.updateById(employee);
+
+        return R.success("用户信息更新成功");
     }
 }
