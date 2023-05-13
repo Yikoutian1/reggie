@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="更新拦截，新增员工">
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/config/MybatisPlusConfig.java" afterDir="false" />
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="开始添加员工分页操作">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +114,8 @@
       <workItem from="1683892065632" duration="7949000" />
       <workItem from="1683900652665" duration="171000" />
       <workItem from="1683900905243" duration="105000" />
-      <workItem from="1683901047897" duration="1595000" />
+      <workItem from="1683901047897" duration="1617000" />
+      <workItem from="1683960807167" duration="330000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -139,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683900582398</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="开始添加员工分页操作">
+      <created>1683902670262</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683902670262</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +167,7 @@
     <MESSAGE value="update init_project" />
     <MESSAGE value="update login and logout" />
     <MESSAGE value="更新拦截，新增员工" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新拦截，新增员工" />
+    <MESSAGE value="开始添加员工分页操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="开始添加员工分页操作" />
   </component>
 </project>
