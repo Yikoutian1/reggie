@@ -142,4 +142,18 @@ public class EmployeeController {
 
         return R.success("用户信息更新成功");
     }
+
+    /**
+     *  根据id查询信息
+     * @param id  通过{id}获取页面返回的数据,@并且用PathVariable修饰
+     * @return
+     */
+    @GetMapping("/{id}")
+    public R<Employee> getById(@PathVariable Long id){
+        Employee employee = employeeService.getById(id);
+        if(employee!=null&&employee.getStatus()!=0) {
+            return R.success(employee);
+        }
+        return R.error("错误的操作");
+    }
 }
