@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="config test">
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="update employee information">
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/CategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +123,8 @@
       <workItem from="1683901047897" duration="1617000" />
       <workItem from="1683960807167" duration="4744000" />
       <workItem from="1684069311483" duration="71000" />
-      <workItem from="1684069450577" duration="1856000" />
+      <workItem from="1684069450577" duration="2272000" />
+      <workItem from="1684141069448" duration="1787000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -171,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684069353256</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update employee information">
+      <created>1684071490607</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684071490607</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +208,7 @@
     <MESSAGE value="test Contribution Activity" />
     <MESSAGE value="员工状态更新,消息转换器添加" />
     <MESSAGE value="config test" />
-    <option name="LAST_COMMIT_MESSAGE" value="config test" />
+    <MESSAGE value="update employee information" />
+    <option name="LAST_COMMIT_MESSAGE" value="update employee information" />
   </component>
 </project>
