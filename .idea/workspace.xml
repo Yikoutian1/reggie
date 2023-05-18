@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="update category">
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/common/BaseContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/common/CustomException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/common/MyMetaObjecthandler.java" afterDir="false" />
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="update category add,save,select,delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/common/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/common/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/filter/LoginCheckFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/resources/backend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +130,7 @@
       <workItem from="1684285547944" duration="2987000" />
       <workItem from="1684294519577" duration="5000" />
       <workItem from="1684294820714" duration="20000" />
-      <workItem from="1684393909217" duration="3955000" />
+      <workItem from="1684393909217" duration="4231000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -202,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684143119293</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update category add,save,select,delete">
+      <created>1684398644353</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684398644354</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +230,7 @@
     <MESSAGE value="config test" />
     <MESSAGE value="update employee information" />
     <MESSAGE value="update category" />
-    <option name="LAST_COMMIT_MESSAGE" value="update category" />
+    <MESSAGE value="update category add,save,select,delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="update category add,save,select,delete" />
   </component>
 </project>

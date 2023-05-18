@@ -65,6 +65,13 @@ public class CategoryController {
         categoryService.updateById(category);
         return R.success("更新数据成功");
     }
+
+    /**
+     * 分类删除
+     * (传入id进行删除)
+     * @param ids
+     * @return
+     */
     @DeleteMapping()
     public R<String> delete(Long ids){
         categoryService.removeById(ids);
