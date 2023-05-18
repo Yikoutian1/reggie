@@ -38,4 +38,13 @@ public class GlobalExceptionHandler{
         // 试图安抚人员
         return R.error("服务器繁忙，请稍后再试");
     }
+    /**
+     * 异常处理方法
+     * @return
+     */
+    @ExceptionHandler(CustomException.class)
+    public R<String> exceptionHandler(CustomException e){
+        log.error(e.getMessage());
+        return R.error(e.getMessage());
+    }
 }
