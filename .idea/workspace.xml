@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="update category add,save,select,delete">
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="注释更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" afterDir="false" />
     </list>
@@ -130,7 +130,7 @@
       <workItem from="1684285547944" duration="2987000" />
       <workItem from="1684294519577" duration="5000" />
       <workItem from="1684294820714" duration="20000" />
-      <workItem from="1684393909217" duration="4231000" />
+      <workItem from="1684393909217" duration="5650000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -202,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684398644354</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="注释更新">
+      <created>1684398933882</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684398933882</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +238,7 @@
     <MESSAGE value="update employee information" />
     <MESSAGE value="update category" />
     <MESSAGE value="update category add,save,select,delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="update category add,save,select,delete" />
+    <MESSAGE value="注释更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="注释更新" />
   </component>
 </project>
