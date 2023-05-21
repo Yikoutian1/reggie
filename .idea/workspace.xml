@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="完善公共补充类">
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/dto/DishDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/dto/SetmealDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/Dish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/Setmeal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/mapper/DishMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/mapper/SetmealMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/DishService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/SetmealService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/DishServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/SetmealServiceImpl.java" afterDir="false" />
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="完善公共补充类,分类管理和删除的重写">
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/common/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/common/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/filter/LoginCheckFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/EmployeeServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +133,7 @@
       <workItem from="1684294820714" duration="20000" />
       <workItem from="1684393909217" duration="5863000" />
       <workItem from="1684672929669" duration="4654000" />
-      <workItem from="1684678218772" duration="3457000" />
+      <workItem from="1684678218772" duration="4656000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -236,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684400496242</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="完善公共补充类,分类管理和删除的重写">
+      <created>1684681721172</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684681721172</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +257,7 @@
     <MESSAGE value="update category add,save,select,delete" />
     <MESSAGE value="注释更新" />
     <MESSAGE value="update category function list" />
-    <option name="LAST_COMMIT_MESSAGE" value="update category function list" />
+    <MESSAGE value="完善公共补充类,分类管理和删除的重写" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善公共补充类,分类管理和删除的重写" />
   </component>
 </project>
