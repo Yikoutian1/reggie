@@ -39,7 +39,7 @@ public class GlobalExceptionHandler{
         return R.error("服务器繁忙，请稍后再试");
     }
     /**
-     * 异常处理方法
+     * 异常处理方法(可以返回到前端异常信息)
      * @return
      */
     @ExceptionHandler(CustomException.class)

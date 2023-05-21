@@ -88,14 +88,15 @@ public class EmployeeController {
     public R<String> save(HttpServletRequest request,@RequestBody Employee employee){
         // 设置初始密码,md5加密处理
         employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
-
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
-        // 获取当前登录用户id
-        Long empId = (Long) request.getSession().getAttribute("employee");
-        employee.setCreateUser(empId);
-
-        employee.setUpdateUser(empId);
+//------------------------mybatis-plus自动填充------------------------------
+//        employee.setCreateTime(LocalDateTime.now());
+//        employee.setUpdateTime(LocalDateTime.now());
+//        // 获取当前登录用户id
+//        Long empId = (Long) request.getSession().getAttribute("employee");
+//        employee.setCreateUser(empId);
+//
+//        employee.setUpdateUser(empId);
+//----------------------------------------------------------------------
         // 此时的save为IService中的,mybatis-plus里面的
         employeeService.save(employee);
         return R.success("新增员工成功");
@@ -133,11 +134,15 @@ public class EmployeeController {
      */
     @PutMapping()
     public R<String> update(HttpServletRequest request,@RequestBody Employee employee){
-        // 获取当前登录用户id (Long强转精度丢失)
-        Long empId = (Long) request.getSession().getAttribute("employee");
 
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser(empId);
+//        // 获取当前登录用户id (Long强转精度丢失)
+//        Long empId = (Long) request.getSession().getAttribute("employee");
+//        employee.setUpdateTime(LocalDateTime.now());
+//        employee.setUpdateUser(empId);
+        log.info(employee.toString());
+        long id = Thread.currentThread().getId();
+        log.info("线程id为：{}",id);
+
         // 这里使用的是mybatisPlus里面的sql
         employeeService.updateById(employee);
 

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ithang.reggie.entity.Employee;
 import com.ithang.reggie.mapper.EmployeeMapper;
 import com.ithang.reggie.service.EmployeeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
  * @Version 1.0
  */
 @Service
+@Slf4j
 public class EmployeeServiceImpl
         // 实现父类，实现父接口
         extends ServiceImpl<EmployeeMapper,Employee>
