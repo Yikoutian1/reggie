@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="add DishController">
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +134,10 @@
       <workItem from="1684393909217" duration="5863000" />
       <workItem from="1684672929669" duration="4654000" />
       <workItem from="1684678218772" duration="4799000" />
-      <workItem from="1684683381938" duration="357000" />
+      <workItem from="1684683381938" duration="474000" />
+      <workItem from="1684723509946" duration="16000" />
+      <workItem from="1684805049038" duration="25000" />
+      <workItem from="1684809631110" duration="4624000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -233,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684683237140</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="0">
+      <created>1684683838476</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684683838476</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +277,7 @@
     <MESSAGE value="update category function list" />
     <MESSAGE value="完善公共补充类,分类管理和删除的重写" />
     <MESSAGE value="add DishController" />
-    <option name="LAST_COMMIT_MESSAGE" value="add DishController" />
+    <MESSAGE value="0" />
+    <option name="LAST_COMMIT_MESSAGE" value="0" />
   </component>
 </project>
