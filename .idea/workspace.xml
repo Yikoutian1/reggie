@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="0">
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CommonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/resources/backend/page/demo/upload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/test/java/com/reggie/reggie/ReggieApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/test/java/com/reggie/reggie/ReggieApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +60,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/JavaDemo/reggie/reggie/src/main/java/com/ithang/reggie/common&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaDemo/reggie/reggie/src/main/resources/backend/page/demo&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;3acf5c7b740d6e2538f3a7b88cf069b3&quot;,
@@ -71,16 +74,17 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\resources\backend\page\demo" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\common" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\config" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\resources\backend\page\demo" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\entity" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\dto" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\common" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\resources" />
-      <recent name="D:\JavaDemo\reggie\reggie\src\main\resources\webResources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -90,7 +94,23 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ReggieApplication">
+    <configuration name="ReggieApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reggie" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.reggie.reggie.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.reggie.reggie" />
+      <option name="MAIN_CLASS_NAME" value="com.reggie.reggie.ReggieApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ReggieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
       <module name="reggie" />
@@ -99,6 +119,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -137,7 +162,10 @@
       <workItem from="1684683381938" duration="474000" />
       <workItem from="1684723509946" duration="16000" />
       <workItem from="1684805049038" duration="25000" />
-      <workItem from="1684809631110" duration="4624000" />
+      <workItem from="1684809631110" duration="6077000" />
+      <workItem from="1684841046254" duration="1240000" />
+      <workItem from="1684842313906" duration="2753000" />
+      <workItem from="1684846838794" duration="958000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -244,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684683838476</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="0">
+      <created>1684822760786</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684822760788</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

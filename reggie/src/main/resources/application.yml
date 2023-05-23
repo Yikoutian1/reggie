@@ -10,6 +10,14 @@ spring:
     url: jdbc:mysql://localhost:3306/reggie?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&tinyInt1isBit=false
     username: root
     password: 1qiulihang
+  #文件大小 MB必须大写
+  #  maxFileSize 是单个文件大小
+  #  maxRequestSize是设置总上传的数据大小
+#  servlet:
+#    multipart:
+#      enabled: true
+#      max-file-size: 20MB
+#      max-request-size: 20MB
 mybatis-plus:
   configuration:
     #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
@@ -22,3 +30,6 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: ASSIGN_ID
+#下载上传缓存照片路径basePath
+reggie:
+  path: D:\Data\reggiePhoto\
