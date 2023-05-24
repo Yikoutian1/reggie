@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="上传图片">
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/DishFlavor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/mapper/DishFlavorMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/DishFlavorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/DishFlavorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="Dish DishFlavor">
       <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/Dish.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +25,24 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -168,6 +180,7 @@
       <workItem from="1684841046254" duration="1240000" />
       <workItem from="1684842313906" duration="2753000" />
       <workItem from="1684846838794" duration="4210000" />
+      <workItem from="1684889295229" duration="176000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -288,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684847923760</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Dish DishFlavor">
+      <created>1684889393399</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684889393399</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +343,7 @@
     <MESSAGE value="add DishController" />
     <MESSAGE value="0" />
     <MESSAGE value="上传图片" />
-    <option name="LAST_COMMIT_MESSAGE" value="上传图片" />
+    <MESSAGE value="Dish DishFlavor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dish DishFlavor" />
   </component>
 </project>

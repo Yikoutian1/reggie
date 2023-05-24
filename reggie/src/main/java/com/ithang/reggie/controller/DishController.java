@@ -35,5 +35,6 @@ public class DishController {
         LambdaQueryWrapper<Dish> dishLambdaQueryWrapper = new LambdaQueryWrapper<>();
 
         return R.success(pageInfo);
+
     }
 }
