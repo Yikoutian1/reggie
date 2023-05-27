@@ -10,6 +10,7 @@ import com.ithang.reggie.service.DishFlavorService;
 import com.ithang.reggie.service.DishService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +29,7 @@ public class DishController {
     private DishService dishService;
     @Autowired
     private DishFlavorService dishFlavorService;
+    @GetMapping("/page")
     public R<Page> page(int page, int pageSize) {
         // 构造分页构造器
         Page pageInfo = new Page(page, pageSize);

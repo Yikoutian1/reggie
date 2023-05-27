@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="Dish DishFlavor">
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="dev git information change test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,15 +37,29 @@
               </list>
             </value>
           </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
+              </list>
+            </value>
+          </entry>
         </map>
       </branch-storage>
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -76,7 +92,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/JavaDemo/reggie/reggie/src/main/resources/backend/page/demo&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;3acf5c7b740d6e2538f3a7b88cf069b3&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -136,6 +152,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +201,9 @@
       <workItem from="1684842313906" duration="2753000" />
       <workItem from="1684846838794" duration="4210000" />
       <workItem from="1684889295229" duration="176000" />
+      <workItem from="1684985273460" duration="1176000" />
+      <workItem from="1684994336123" duration="16000" />
+      <workItem from="1685194523053" duration="526000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -308,7 +331,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684889393399</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="git test">
+      <created>1684985186844</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684985186844</updated>
+    </task>
+    <task id="LOCAL-00020" summary="dev git information change test">
+      <created>1684986307879</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684986307879</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +381,8 @@
     <MESSAGE value="0" />
     <MESSAGE value="上传图片" />
     <MESSAGE value="Dish DishFlavor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dish DishFlavor" />
+    <MESSAGE value="git test" />
+    <MESSAGE value="dev git information change test" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev git information change test" />
   </component>
 </project>

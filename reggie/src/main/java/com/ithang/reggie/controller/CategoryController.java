@@ -80,9 +80,9 @@ public class CategoryController {
     public R<List<Category>> list(Category category){
         //条件构造器
         LambdaQueryWrapper<Category> queryWrapper = new LambdaQueryWrapper<>();
-        //添加条件
+        //添加条件eq:等值查询
         queryWrapper.eq(category.getType() != null,Category::getType,category.getType());
-        //添加排序条件
+        //添加排序条件，两个排序字段条件，首先通过sort
         queryWrapper.orderByAsc(Category::getSort).orderByDesc(Category::getUpdateTime);
         List<Category> list = categoryService.list(queryWrapper);
         return R.success(list);
