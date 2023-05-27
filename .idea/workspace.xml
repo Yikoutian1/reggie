@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="更新菜品的添加,多表联合添加的处理,引入DTO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/ReggieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/ReggieApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/dto/DishDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/dto/DishDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/DishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/DishService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/DishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/DishServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +48,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,6 +59,17 @@
         <option value="main" />
       </list>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/ReggieApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/dto/DishDto.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/dto/SetmealDto.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/Dish.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/filter/LoginCheckFilter.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/DishFlavorServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/DishServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -161,6 +167,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
         <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
         <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
         <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
