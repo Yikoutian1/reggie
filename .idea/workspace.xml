@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="dev git information change test">
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="更新菜品的添加,多表联合添加的处理,引入DTO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/ReggieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/ReggieApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/dto/DishDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/dto/DishDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/DishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/DishService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/DishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/DishServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,17 +145,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReggieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="ReggieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" />
       <module name="reggie" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ithang.reggie.ReggieApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ithang.reggie.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
         <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
         <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
         <item itemvalue="JUnit.ReggieApplicationTests.contextLoads" />
@@ -204,6 +213,7 @@
       <workItem from="1684985273460" duration="1176000" />
       <workItem from="1684994336123" duration="16000" />
       <workItem from="1685194523053" duration="526000" />
+      <workItem from="1685195491318" duration="2920000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
@@ -383,6 +393,7 @@
     <MESSAGE value="Dish DishFlavor" />
     <MESSAGE value="git test" />
     <MESSAGE value="dev git information change test" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev git information change test" />
+    <MESSAGE value="更新菜品的添加,多表联合添加的处理,引入DTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新菜品的添加,多表联合添加的处理,引入DTO" />
   </component>
 </project>
