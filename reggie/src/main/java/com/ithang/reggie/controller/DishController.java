@@ -108,5 +108,17 @@ public class DishController {
         dishService.updateDishWithFlavor(dishDto);
         return R.success("保存成功");
     }
+    @GetMapping("/list")
+    public R<List<Dish>> list(Dish dish){ // 返回的是多个菜品,在添加菜品那里显示出来的,因为要遍历菜品,然后关联到菜品中
+        // 构造查询条件
+        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(dish.getCategoryId()!=null,Dish::getCategoryId,dish.getCategoryId());
+        // 1 表示起售的菜品,查询status为1的菜品
+        queryWrapper.eq(Dish::getStatus,1);
+        // 添加排序条件
+        queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+        List<Dish> list = dishService.list(queryWrapper);
 
+        return R.success(list);
+    }
 }
