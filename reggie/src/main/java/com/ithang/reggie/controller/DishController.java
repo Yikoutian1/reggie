@@ -6,7 +6,6 @@ import com.ithang.reggie.common.R;
 import com.ithang.reggie.dto.DishDto;
 import com.ithang.reggie.entity.Category;
 import com.ithang.reggie.entity.Dish;
-import com.ithang.reggie.entity.DishFlavor;
 import com.ithang.reggie.service.CategoryService;
 import com.ithang.reggie.service.DishFlavorService;
 import com.ithang.reggie.service.DishService;
@@ -73,11 +72,13 @@ public class DishController {
             Long categoryId = item.getCategoryId();
             // 根据id查询分类对象
             Category category = categoryService.getById(categoryId);
-            // 单独获取名称
-            String categoryName = category.getName();
-            // 单独设置名称
-            dishDto.setCategoryName(categoryName);
-
+            // 把category不等于空先排除，如果能查上来 则获取name并且设置
+            if(category != null) {
+                // 单独获取名称
+                String categoryName = category.getName();
+                // 单独设置名称
+                dishDto.setCategoryName(categoryName);
+            }
             return dishDto;
         // 通过collect里面的Collectors.toList()转成list集合返回
         }).collect(Collectors.toList());
@@ -85,4 +86,27 @@ public class DishController {
         dishDtoPage.setRecords(list);
         return R.success(dishDtoPage);
     }
+    /**
+     * 根据id查询菜品信息对应的口味信息
+     * 需要回显页面数据    DTO包含了这些信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public R<DishDto> getBack(@PathVariable Long id){
+        DishDto dishDto= dishService.getByIdWithFlavor(id);
+        return R.success(dishDto);
+    }
+
+    /**
+     * 菜品修改
+     * @param dishDto
+     * @return
+     */
+    @PutMapping()
+    public R<String> update(@RequestBody DishDto dishDto){
+        dishService.updateDishWithFlavor(dishDto);
+        return R.success("保存成功");
+    }
+
 }
