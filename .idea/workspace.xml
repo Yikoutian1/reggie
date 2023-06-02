@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="菜品分页">
+    <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="套餐管理,套餐数据批量删除">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_email_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_3_0_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/utils/EmailUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/utils/ValidateCodeUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/DishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/DishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/DishService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/DishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/DishServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/filter/LoginCheckFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/resources/front/api/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/api/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/resources/front/page/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/page/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +115,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/JavaDemo/reggie/reggie/src/main/resources/backend/page/demo",
+    "last_opened_file_path": "D:/JavaDemo/reggie/reggie/src/main/java/com/ithang/reggie/utils",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "debugger.stepping",
     "spring.configuration.checksum": "3acf5c7b740d6e2538f3a7b88cf069b3",
@@ -116,15 +129,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\JavaDemo\reggie\reggie\src\main\resources\backend\page\demo" />
-      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\common" />
-      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\config" />
-      <recent name="D:\JavaDemo\reggie\reggie\src\main\resources" />
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\utils" />
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\service\impl" />
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\service" />
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\mapper" />
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\dto" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\entity" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\resources\backend\page\demo" />
-      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\dto" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\common" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\resources" />
     </key>
@@ -224,6 +238,8 @@
       <workItem from="1685194523053" duration="526000" />
       <workItem from="1685195491318" duration="2920000" />
       <workItem from="1685275264410" duration="4743000" />
+      <workItem from="1685534371007" duration="6685000" />
+      <workItem from="1685710872333" duration="4756000" />
     </task>
     <task id="LOCAL-00001" summary="update init_project">
       <created>1683389606806</created>
