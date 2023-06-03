@@ -55,11 +55,12 @@ public class UserController {
     }
 
     /**
-     * 移动端用户登录
+     * 手机号移动端用户登录
      * @param map
      * @param session
      * @return
      */
+    /*
     @PostMapping("/login")
     public R<User> login(@RequestBody Map map, HttpSession session){
         log.info(map.toString());
@@ -92,6 +93,41 @@ public class UserController {
             return R.success(user);
         }
         return R.error("登录失败");
+    }*/
+    //    移动应用登录端
+    @PostMapping("/login")
+    // 这里使用map来接收前端传过来的值
+    private R<User> login(@RequestBody Map map, HttpSession session) {
+        log.info(map.toString());
+        //        使用map来接收参数,接收键值参数、
+        //        编写处理逻辑
+        //        获取到手机号
+        //        获取到验证码
+        //        从Session中获取到保存的验证码
+        //     将session中获取到的验证码和前端提交过来的验证码进行比较，这样就可以实现一个验证的方式
+        //        比对页面提交的验证码和session中
+        //判断当前的手机号在数据库查询是否有记录，如果没有记录，说明是一个新的用户，然后自动将这个手机号进行注册
+        String phone = map.get("phone").toString();
+        String code = map.get("code").toString();
+        //获取session中phone字段对应的验证码
+        Object codeInSession = session.getAttribute(phone);
+        //        下面进行比对
+        if (codeInSession != null && codeInSession.equals(code)) {
+            LambdaQueryWrapper<User> userLambdaQueryWrapper = new LambdaQueryWrapper<>();
+            //            在表中根据号码来查询是否存在该邮箱用户
+            userLambdaQueryWrapper.eq(User::getPhone, phone);
+            User user = userService.getOne(userLambdaQueryWrapper);
+            if(user == null){
+                //判断当前手机号对应的用户是否为新用户，如果是新用户就自动完成注册
+                user = new User();
+                user.setPhone(phone);
+                user.setStatus(1);
+                userService.save(user);
+            }
+            // 这里我们将user存储进去，后面各项操作，我们会用，其中拦截器那边会判断用户是否登录，所以我们将这个存储进去，
+            session.setAttribute("user",user.getId());
+            return R.success(user);
+        }
+        return R.error("验证失败");
     }
-
 }
