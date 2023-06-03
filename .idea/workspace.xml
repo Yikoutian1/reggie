@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a474bad-8915-4ece-9446-3ee35fd847e1" name="Changes" comment="使用qq邮箱发送注册短信验证码">
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/entity/AddressBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/mapper/AddressBookMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/AddressBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/service/impl/AddressBookServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/filter/LoginCheckFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reggie/src/main/resources/front/page/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/reggie/src/main/resources/front/page/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,8 +127,8 @@
       <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\dto" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\entity" />
+      <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\dto" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\resources\backend\page\demo" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\java\com\ithang\reggie\common" />
       <recent name="D:\JavaDemo\reggie\reggie\src\main\resources" />
@@ -418,17 +423,7 @@
     <MESSAGE value="更新菜品的添加,多表联合添加的处理,引入DTO" />
     <MESSAGE value="菜品分页" />
     <MESSAGE value="使用qq邮箱发送注册短信验证码" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用qq邮箱发送注册短信验证码" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/reggie/src/main/java/com/ithang/reggie/controller/UserController.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="使用邮箱发送注册短信验证码(完善)" />
+    <option name="LAST_COMMIT_MESSAGE" value="使用邮箱发送注册短信验证码(完善)" />
   </component>
 </project>

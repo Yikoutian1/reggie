@@ -94,38 +94,47 @@ public class UserController {
         }
         return R.error("登录失败");
     }*/
-    //    移动应用登录端
+
+    /**
+     *  移动应用登录端
+     * @param map
+     * @param session
+     * @return
+     * @discrible 这里使用map来接收前端传过来的值
+     */
     @PostMapping("/login")
-    // 这里使用map来接收前端传过来的值
     private R<User> login(@RequestBody Map map, HttpSession session) {
         log.info(map.toString());
-        //        使用map来接收参数,接收键值参数、
-        //        编写处理逻辑
-        //        获取到手机号
-        //        获取到验证码
-        //        从Session中获取到保存的验证码
-        //     将session中获取到的验证码和前端提交过来的验证码进行比较，这样就可以实现一个验证的方式
-        //        比对页面提交的验证码和session中
-        //判断当前的手机号在数据库查询是否有记录，如果没有记录，说明是一个新的用户，然后自动将这个手机号进行注册
+
+        // 使用map来接收参数,接收键值参数
+        // 获取到手机号
         String phone = map.get("phone").toString();
+        // 获取到验证码
         String code = map.get("code").toString();
+        // 从Session中获取到保存的验证码
+        //  将session中获取到的验证码和前端提交过来的验证码进行比较，这样就可以实现一个验证的方式
+        // 比对页面提交的验证码和session中
+
         //获取session中phone字段对应的验证码
         Object codeInSession = session.getAttribute(phone);
-        //        下面进行比对
+        // 下面进行比对
         if (codeInSession != null && codeInSession.equals(code)) {
             LambdaQueryWrapper<User> userLambdaQueryWrapper = new LambdaQueryWrapper<>();
-            //            在表中根据号码来查询是否存在该邮箱用户
+            // 在表中根据号码来查询是否存在该邮箱用户
             userLambdaQueryWrapper.eq(User::getPhone, phone);
             User user = userService.getOne(userLambdaQueryWrapper);
+            //判断当前的手机号在数据库查询是否有记录，如果没有记录，说明是一个新的用户，然后自动将这个手机号进行注册
             if(user == null){
                 //判断当前手机号对应的用户是否为新用户，如果是新用户就自动完成注册
                 user = new User();
                 user.setPhone(phone);
                 user.setStatus(1);
+                // insert
                 userService.save(user);
             }
             // 这里我们将user存储进去，后面各项操作，我们会用，其中拦截器那边会判断用户是否登录，所以我们将这个存储进去，
             session.setAttribute("user",user.getId());
+            // 登录成功需要返回user,在浏览器需要保存一份
             return R.success(user);
         }
         return R.error("验证失败");
