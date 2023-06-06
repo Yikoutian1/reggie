@@ -1,5 +1,6 @@
 package com.ithang.reggie.utils;
 
+
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
