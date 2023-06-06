@@ -1,6 +1,6 @@
 package com.ithang.reggie.controller;
 
-import com.ithang.reggie.entity.ShoppingCart;
+
 import com.ithang.reggie.service.ShoppingCartService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
