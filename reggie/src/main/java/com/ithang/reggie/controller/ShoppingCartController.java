@@ -66,6 +66,59 @@ public class ShoppingCartController {
         }
         return R.success(cartServiceOne);
     }
+    /**
+     * 减少购物车菜品/套餐的数量
+     * @param shoppingCart
+     * @return
+     */
+    @PostMapping("/sub")
+    public R<ShoppingCart> sub(@RequestBody ShoppingCart shoppingCart){
+
+        log.info(shoppingCart.toString());
+        Long userId = BaseContext.getCurrentId();
+        Long dishId = shoppingCart.getDishId();
+        //SQL : select * from shopping_cart where user_id = ? and dish_id/setmeal_id = ?
+        LambdaQueryWrapper<ShoppingCart> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(ShoppingCart::getUserId,userId);
+
+        if(dishId != null){
+            //添加到购物车的是菜品
+            queryWrapper.eq(ShoppingCart::getDishId,dishId);
+        }else{
+            //添加到购物车的是套餐
+            queryWrapper.eq(ShoppingCart::getSetmealId,shoppingCart.getSetmealId());
+        }
+
+        ShoppingCart cartServiceOne = shoppingCartService.getOne(queryWrapper);
+
+        if (cartServiceOne != null) {
+            Integer number = cartServiceOne.getNumber();
+            //如果数量大于 0 才能 - 1
+            if (number > 0) {
+                cartServiceOne.setNumber(number - 1);
+                shoppingCartService.updateById(cartServiceOne);
+                //如果数量再减少等于0 则 该商品/套餐 移出购物车
+                if (number - 1 == 0) {
+                    shoppingCartService.removeById(cartServiceOne.getId());
+                }
+            }
+        }
+        return R.success(cartServiceOne);
+    }
+    @DeleteMapping("/clean")
+    public R<String> clean(){
+        // SQL : delete from shopping_cart where user_id = ?
+        Long userId = BaseContext.getCurrentId();
+        // 判断是否登录
+        if(userId == null){
+            return R.error("请先登录用户");
+        }
+        LambdaQueryWrapper<ShoppingCart> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(ShoppingCart::getUserId,userId);
+        // removeById只能删除一条
+        shoppingCartService.remove(queryWrapper);
+        return R.success("清除成功");
+    }
     @GetMapping("/list")
     public R<List<ShoppingCart>> list(){
         log.info("购物车查看...");

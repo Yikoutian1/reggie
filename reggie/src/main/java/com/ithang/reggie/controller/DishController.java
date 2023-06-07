@@ -2,6 +2,7 @@ package com.ithang.reggie.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.ithang.reggie.common.CustomException;
 import com.ithang.reggie.common.R;
 import com.ithang.reggie.dto.DishDto;
 import com.ithang.reggie.entity.Category;
@@ -155,5 +156,21 @@ public class DishController {
             return dishDto;
         }).collect(Collectors.toList());
         return R.success(dishDtoList);
+    }
+    @PostMapping("/status/{status}")
+    public R<String> status(@PathVariable("status") int status,@RequestParam("ids") List<Long> ids) {
+        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+        // 停用之前先查看是否有关联套餐
+        queryWrapper.eq(Dish::getId,ids);
+        long count = dishService.count(queryWrapper);
+        if(count>0){
+            throw new CustomException("当前有关联套餐,不能禁用");
+        }
+        ids.forEach((item)->{
+            Dish dish = dishService.getById(item);
+            dish.setStatus(status);
+            dishService.updateById(dish);
+        });
+        return R.success("状态改变成功");
     }
 }
