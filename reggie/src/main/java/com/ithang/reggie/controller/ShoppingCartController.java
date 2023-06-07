@@ -34,15 +34,17 @@ public class ShoppingCartController {
     @PostMapping("/add")
     public R<ShoppingCart> add(@RequestBody ShoppingCart shoppingCart){
         // 设置当前购物车用户id,指定当前是哪个用户的购物车数据,从BaseContext中获取,或者从session里面获取都可以
-        shoppingCart.setUserId(BaseContext.getCurrentId());
+        Long currentId = BaseContext.getCurrentId();
+        shoppingCart.setUserId(currentId);
         // 查询当前菜品(dishId)或者套餐(setmealId)是否在购物车中
         Long dishId = shoppingCart.getDishId();
+
         LambdaQueryWrapper<ShoppingCart> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(ShoppingCart::getUserId,shoppingCart.getUserId());
+        queryWrapper.eq(ShoppingCart::getUserId,currentId);
 
         if(dishId != null) {
             //添加到购物车的是菜品
-            queryWrapper.eq(ShoppingCart::getDishId,shoppingCart.getDishId());
+            queryWrapper.eq(ShoppingCart::getDishId,dishId);
         }else {
             //添加到购物车的是套餐
             queryWrapper.eq(ShoppingCart::getSetmealId,shoppingCart.getSetmealId());
@@ -53,8 +55,8 @@ public class ShoppingCartController {
         if(cartServiceOne != null){
             //如果已经存在，就在原来数量基础上加一(update)
             Integer number = cartServiceOne.getNumber();
-            cartServiceOne.setNumber(number++);
-            shoppingCartService.save(cartServiceOne);
+            cartServiceOne.setNumber(number+1);
+            shoppingCartService.updateById(cartServiceOne);
         }else {
             //如果不存在，则添加到购物车，数量默认就是一
             shoppingCart.setNumber(1);
