@@ -7,6 +7,7 @@ import com.ithang.reggie.entity.User;
 import com.ithang.reggie.service.UserService;
 import com.ithang.reggie.utils.EmailUtils;
 import com.ithang.reggie.utils.ValidateCodeUtils;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -138,5 +139,10 @@ public class UserController {
             return R.success(user);
         }
         return R.error("验证失败");
+    }
+    @PostMapping("/loginout")
+    public R<String> logout(HttpServletRequest request){
+        request.getSession().removeAttribute("User");
+        return R.success("退出登录");
     }
 }
