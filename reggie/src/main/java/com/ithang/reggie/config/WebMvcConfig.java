@@ -1,15 +1,10 @@
 package com.ithang.reggie.config;
 
 import com.ithang.reggie.common.JacksonObjectMapper;
-import com.ithang.reggie.common.R;
-import com.ithang.reggie.entity.Employee;
-import com.ithang.reggie.service.EmployeeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.cbor.MappingJackson2CborHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 

@@ -3,7 +3,7 @@ package com.ithang.reggie.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ithang.reggie.common.CustomException;
-import com.ithang.reggie.common.R;
+import com.ithang.reggie.common.Result;
 import com.ithang.reggie.dto.DishDto;
 import com.ithang.reggie.entity.Category;
 import com.ithang.reggie.entity.Dish;
@@ -43,12 +43,12 @@ public class DishController {
      * @return
      */
     @PostMapping()
-    public R<String> save(@RequestBody DishDto dishDto){
+    public Result<String> save(@RequestBody DishDto dishDto){
         dishService.saveWithFlavor(dishDto);
-        return R.success("新增菜品成功");
+        return Result.success("新增菜品成功");
     }
     @GetMapping("/page")
-    public R<Page> page(int page, int pageSize,String name) {
+    public Result<Page> page(int page, int pageSize,String name) {
         // 构造分页构造器(如果用Dish则前端缺少一个返回值，菜品分类名字)
         Page<Dish> pageInfo = new Page<>(page,pageSize);
         Page<DishDto> dishDtoPage = new Page<>();
@@ -86,7 +86,7 @@ public class DishController {
         }).collect(Collectors.toList());
 
         dishDtoPage.setRecords(list);
-        return R.success(dishDtoPage);
+        return Result.success(dishDtoPage);
     }
     /**
      * 根据id查询菜品信息对应的口味信息
@@ -95,9 +95,9 @@ public class DishController {
      * @return
      */
     @GetMapping("/{id}")
-    public R<DishDto> getBack(@PathVariable Long id){
+    public Result<DishDto> getBack(@PathVariable Long id){
         DishDto dishDto= dishService.getByIdWithFlavor(id);
-        return R.success(dishDto);
+        return Result.success(dishDto);
     }
 
     /**
@@ -106,14 +106,14 @@ public class DishController {
      * @return
      */
     @PutMapping()
-    public R<String> update(@RequestBody DishDto dishDto){
+    public Result<String> update(@RequestBody DishDto dishDto){
         dishService.updateDishWithFlavor(dishDto);
-        return R.success("保存成功");
+        return Result.success("保存成功");
     }
     // 旧,下面是新的，添加设置口味数据
     /*
     @GetMapping("/list")
-    public R<List<Dish>> list(Dish dish){ // 返回的是多个菜品,在添加菜品那里显示出来的,因为要遍历菜品,然后关联到菜品中
+    public Result<List<Dish>> list(Dish dish){ // 返回的是多个菜品,在添加菜品那里显示出来的,因为要遍历菜品,然后关联到菜品中
         // 构造查询条件
         LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(dish.getCategoryId()!=null,Dish::getCategoryId,dish.getCategoryId());
@@ -123,11 +123,11 @@ public class DishController {
         queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
         List<Dish> list = dishService.list(queryWrapper);
 
-        return R.success(list);
+        return Result.success(list);
     }
     */
     @GetMapping("/list")
-    public R<List<DishDto>> list(Dish dish){ // 返回的是多个菜品,在添加菜品那里显示出来的,因为要遍历菜品,然后关联到菜品中
+    public Result<List<DishDto>> list(Dish dish){ // 返回的是多个菜品,在添加菜品那里显示出来的,因为要遍历菜品,然后关联到菜品中
         // 构造查询条件
         LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(dish.getCategoryId()!=null,Dish::getCategoryId,dish.getCategoryId());
@@ -155,10 +155,10 @@ public class DishController {
             dishDto.setFlavors(dishFlavorList);
             return dishDto;
         }).collect(Collectors.toList());
-        return R.success(dishDtoList);
+        return Result.success(dishDtoList);
     }
     @PostMapping("/status/{status}")
-    public R<String> status(@PathVariable("status") int status,@RequestParam("ids") List<Long> ids) {
+    public Result<String> status(@PathVariable("status") int status,@RequestParam("ids") List<Long> ids) {
         LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
         // 停用之前先查看是否有关联套餐
         queryWrapper.eq(Dish::getId,ids);
@@ -171,6 +171,6 @@ public class DishController {
             dish.setStatus(status);
             dishService.updateById(dish);
         });
-        return R.success("状态改变成功");
+        return Result.success("状态改变成功");
     }
 }

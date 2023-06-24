@@ -2,7 +2,7 @@ package com.ithang.reggie.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 
-import com.ithang.reggie.common.R;
+import com.ithang.reggie.common.Result;
 import com.ithang.reggie.entity.User;
 import com.ithang.reggie.service.UserService;
 import com.ithang.reggie.utils.EmailUtils;
@@ -33,7 +33,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/sendMsg")
-    public R<String> sendMsg(@RequestBody User user, HttpSession session){
+    public Result<String> sendMsg(@RequestBody User user, HttpSession session){
         //获取手机号
         String phone = user.getPhone();
 
@@ -49,10 +49,10 @@ public class UserController {
             //需要将生成的验证码保存到Session
             session.setAttribute(phone,code);
 
-            return R.success("手机验证码短信发送成功");
+            return Result.success("手机验证码短信发送成功");
         }
 
-        return R.error("短信发送失败");
+        return Result.error("短信发送失败");
     }
 
     /**
@@ -63,7 +63,7 @@ public class UserController {
      */
     /*
     @PostMapping("/login")
-    public R<User> login(@RequestBody Map map, HttpSession session){
+    public Result<User> login(@RequestBody Map map, HttpSession session){
         log.info(map.toString());
 
         //获取手机号
@@ -91,9 +91,9 @@ public class UserController {
                 userService.save(user);
             }
             session.setAttribute("user",user.getId());
-            return R.success(user);
+            return Result.success(user);
         }
-        return R.error("登录失败");
+        return Result.error("登录失败");
     }*/
 
     /**
@@ -104,7 +104,7 @@ public class UserController {
      * @discrible 这里使用map来接收前端传过来的值
      */
     @PostMapping("/login")
-    private R<User> login(@RequestBody Map map, HttpSession session) {
+    private Result<User> login(@RequestBody Map map, HttpSession session) {
         log.info(map.toString());
 
         // 使用map来接收参数,接收键值参数
@@ -136,13 +136,13 @@ public class UserController {
             // 这里我们将user存储进去，后面各项操作，我们会用，其中拦截器那边会判断用户是否登录，所以我们将这个存储进去，
             session.setAttribute("user",user.getId());
             // 登录成功需要返回user,在浏览器需要保存一份
-            return R.success(user);
+            return Result.success(user);
         }
-        return R.error("验证失败");
+        return Result.error("验证失败");
     }
     @PostMapping("/loginout")
-    public R<String> logout(HttpServletRequest request){
+    public Result<String> logout(HttpServletRequest request){
         request.getSession().removeAttribute("User");
-        return R.success("退出登录");
+        return Result.success("退出登录");
     }
 }

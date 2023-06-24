@@ -2,7 +2,7 @@ package com.ithang.reggie.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.ithang.reggie.common.R;
+import com.ithang.reggie.common.Result;
 import com.ithang.reggie.dto.DishDto;
 import com.ithang.reggie.dto.SetmealDto;
 import com.ithang.reggie.entity.Category;
@@ -42,9 +42,9 @@ public class SetmealController {
      * @return
      */
     @PostMapping()
-    public R<String> save(@RequestBody SetmealDto setmealDto){
+    public Result<String> save(@RequestBody SetmealDto setmealDto){
         setmealService.saveWithDish(setmealDto);
-        return R.success("添加套餐成功");
+        return Result.success("添加套餐成功");
     }
     /**
      * 分页
@@ -55,7 +55,7 @@ public class SetmealController {
      * @return
      */
     @GetMapping("/page")
-    public R<Page> page(int page,int pageSize,String name){
+    public Result<Page> page(int page,int pageSize,String name){
         // 分页构造器
         Page<Setmeal> pageInfo = new Page<>(page,pageSize);
         Page<SetmealDto> setmealDtoPage = new Page<>();
@@ -82,7 +82,7 @@ public class SetmealController {
             // 通过collect里面的Collectors.toList()转成list集合返回
         }).collect(Collectors.toList());
         setmealDtoPage.setRecords(list);
-        return R.success(setmealDtoPage);
+        return Result.success(setmealDtoPage);
     }
 
     /**
@@ -91,18 +91,18 @@ public class SetmealController {
      * @return
      */
     @DeleteMapping()
-    public R<String> delete(@RequestParam List<Long> ids){
+    public Result<String> delete(@RequestParam List<Long> ids){
         setmealService.removeWithDish(ids);
-        return R.success("删除成功");
+        return Result.success("删除成功");
     }
     @GetMapping("/list")
-    public R<List<Setmeal>> list(Setmeal setmeal){
+    public Result<List<Setmeal>> list(Setmeal setmeal){
         LambdaQueryWrapper<Setmeal> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(setmeal.getCategoryId()!=null,Setmeal::getCategoryId,setmeal.getCategoryId());
         queryWrapper.eq(Setmeal::getStatus,1);
         queryWrapper.orderByDesc(Setmeal::getUpdateTime);
 
         List<Setmeal> list = setmealService.list(queryWrapper);
-        return R.success(list);
+        return Result.success(list);
     }
 }

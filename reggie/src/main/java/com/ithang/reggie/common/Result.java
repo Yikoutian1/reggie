@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Data
-public class R<T> {
+public class Result<T> {
 
     private Integer code; //编码：1成功，0和其它数字为失败
     //错误信息
@@ -15,21 +15,21 @@ public class R<T> {
 
     private Map map = new HashMap(); //动态数据
 
-    public static <T> R<T> success(T object) {
-        R<T> r = new R<T>();
+    public static <T> Result<T> success(T object) {
+        Result<T> r = new Result<T>();
         r.data = object;
         r.code = 1;
         return r;
     }
 
-    public static <T> R<T> error(String msg) {
-        R r = new R();
+    public static <T> Result<T> error(String msg) {
+        Result r = new Result();
         r.msg = msg;
         r.code = 0;
         return r;
     }
 
-    public R<T> add(String key, Object value) {
+    public Result<T> add(String key, Object value) {
         this.map.put(key, value);
         return this;
     }
