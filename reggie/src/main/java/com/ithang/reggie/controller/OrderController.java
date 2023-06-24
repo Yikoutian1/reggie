@@ -31,7 +31,7 @@ public class OrderController {
      */
     @PostMapping("/submit")
     public Result<String> submit(@RequestBody Orders orders){
-        log.info("订单数据：{}",orders);
+        log.info("订单数据：{} ",orders);
         orderService.submit(orders);
         return Result.success("下单成功");
     }
