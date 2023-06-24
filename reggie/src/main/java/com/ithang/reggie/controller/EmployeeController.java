@@ -2,7 +2,7 @@ package com.ithang.reggie.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.ithang.reggie.common.R;
+import com.ithang.reggie.common.Result;
 import com.ithang.reggie.entity.Category;
 import com.ithang.reggie.entity.Employee;
 import com.ithang.reggie.service.EmployeeService;
@@ -36,7 +36,7 @@ public class EmployeeController {
      * @return
      */
     @PostMapping("/login")
-    public R<Employee> login(HttpServletRequest request
+    public Result<Employee> login(HttpServletRequest request
             ,@RequestBody Employee employee){
         // 1、将页面提交的密码password进行md5加密处理
         String password = employee.getPassword();
@@ -50,22 +50,22 @@ public class EmployeeController {
 
         // 3、如果没有查询到则返回登录失败结果
         if(emp==null){
-            return R.error("登录失败");
+            return Result.error("登录失败");
         }
 
         // 4、密码比对，如果不一-致则返回登录失败结果
         if(!emp.getPassword().equals(password)){
-            return R.error("登录失败");
+            return Result.error("登录失败");
         }
 
         // 5、查看员工状态，如果为已禁用状态，则返回员工已禁用结果
         if(emp.getStatus() == 0){
-            return R.error("账号已禁用");
+            return Result.error("账号已禁用");
         }
 
         // 6、登录成功，将员Tid存入Session并返回登录成功结果
         request.getSession().setAttribute("employee",emp.getId());
-        return R.success(emp);
+        return Result.success(emp);
     }
 
     /**
@@ -73,10 +73,10 @@ public class EmployeeController {
      * @return
      */
     @PostMapping("/logout")
-    public R<String> logout(HttpServletRequest request){
+    public Result<String> logout(HttpServletRequest request){
         // 清理Session中保存的当前登录员工的id
         request.getSession().removeAttribute("employee");
-        return R.success("退出成功");
+        return Result.success("退出成功");
     }
 
     /**
@@ -85,7 +85,7 @@ public class EmployeeController {
      * @return
      */
     @PostMapping()
-    public R<String> save(HttpServletRequest request,@RequestBody Employee employee){
+    public Result<String> save(HttpServletRequest request,@RequestBody Employee employee){
         // 设置初始密码,md5加密处理
         employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
 //------------------------mybatis-plus自动填充------------------------------
@@ -99,7 +99,7 @@ public class EmployeeController {
 //----------------------------------------------------------------------
         // 此时的save为IService中的,mybatis-plus里面的
         employeeService.save(employee);
-        return R.success("新增员工成功");
+        return Result.success("新增员工成功");
     }
 
     /**
@@ -110,7 +110,7 @@ public class EmployeeController {
      * @return
      */
     @GetMapping("/page")
-    public R<Page> page(int page,int pageSize,String name) {// Page泛型是mybatisPlus里面的分页泛型,其中name为搜索框框里面的
+    public Result<Page> page(int page,int pageSize,String name) {// Page泛型是mybatisPlus里面的分页泛型,其中name为搜索框框里面的
         log.info("page = {},pageSize = {},name = {}", page, pageSize, name);
         // 构造分页构造器
         Page pageInfo = new Page(page, pageSize);
@@ -124,7 +124,7 @@ public class EmployeeController {
         queryWrapper.orderByDesc(Employee::getUpdateTime);
         // 执行查询
         employeeService.page(pageInfo, queryWrapper);
-        return R.success(pageInfo);
+        return Result.success(pageInfo);
     }
 
     /**
@@ -133,7 +133,7 @@ public class EmployeeController {
      * @return
      */
     @PutMapping()
-    public R<String> update(HttpServletRequest request,@RequestBody Employee employee){
+    public Result<String> update(HttpServletRequest request,@RequestBody Employee employee){
 
 //        // 获取当前登录用户id (Long强转精度丢失)
 //        Long empId = (Long) request.getSession().getAttribute("employee");
@@ -146,7 +146,7 @@ public class EmployeeController {
         // 这里使用的是mybatisPlus里面的sql
         employeeService.updateById(employee);
 
-        return R.success("用户信息更新成功");
+        return Result.success("用户信息更新成功");
     }
 
     /**
@@ -155,12 +155,12 @@ public class EmployeeController {
      * @return
      */
     @GetMapping("/{id}")
-    public R<Employee> getById(@PathVariable Long id){
+    public Result<Employee> getById(@PathVariable Long id){
         Employee employee = employeeService.getById(id);
         if(employee!=null&&employee.getStatus()!=0) {
-            return R.success(employee);
+            return Result.success(employee);
         }
-        return R.error("错误的操作");
+        return Result.error("错误的操作");
     }
 
 }

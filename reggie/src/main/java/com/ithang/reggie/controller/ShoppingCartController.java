@@ -2,7 +2,7 @@ package com.ithang.reggie.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.ithang.reggie.common.BaseContext;
-import com.ithang.reggie.common.R;
+import com.ithang.reggie.common.Result;
 import com.ithang.reggie.entity.ShoppingCart;
 import com.ithang.reggie.service.ShoppingCartService;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +32,7 @@ public class ShoppingCartController {
      * @return
      */
     @PostMapping("/add")
-    public R<ShoppingCart> add(@RequestBody ShoppingCart shoppingCart){
+    public Result<ShoppingCart> add(@RequestBody ShoppingCart shoppingCart){
         // 设置当前购物车用户id,指定当前是哪个用户的购物车数据,从BaseContext中获取,或者从session里面获取都可以
         Long currentId = BaseContext.getCurrentId();
         shoppingCart.setUserId(currentId);
@@ -64,7 +64,7 @@ public class ShoppingCartController {
             shoppingCartService.save(shoppingCart);
             cartServiceOne = shoppingCart; // 传出去,然后返回
         }
-        return R.success(cartServiceOne);
+        return Result.success(cartServiceOne);
     }
     /**
      * 减少购物车菜品/套餐的数量
@@ -72,7 +72,7 @@ public class ShoppingCartController {
      * @return
      */
     @PostMapping("/sub")
-    public R<ShoppingCart> sub(@RequestBody ShoppingCart shoppingCart){
+    public Result<ShoppingCart> sub(@RequestBody ShoppingCart shoppingCart){
 
         log.info(shoppingCart.toString());
         Long userId = BaseContext.getCurrentId();
@@ -103,29 +103,29 @@ public class ShoppingCartController {
                 }
             }
         }
-        return R.success(cartServiceOne);
+        return Result.success(cartServiceOne);
     }
     @DeleteMapping("/clean")
-    public R<String> clean(){
+    public Result<String> clean(){
         // SQL : delete from shopping_cart where user_id = ?
         Long userId = BaseContext.getCurrentId();
         // 判断是否登录
         if(userId == null){
-            return R.error("请先登录用户");
+            return Result.error("请先登录用户");
         }
         LambdaQueryWrapper<ShoppingCart> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(ShoppingCart::getUserId,userId);
         // removeById只能删除一条
         shoppingCartService.remove(queryWrapper);
-        return R.success("清除成功");
+        return Result.success("清除成功");
     }
     @GetMapping("/list")
-    public R<List<ShoppingCart>> list(){
+    public Result<List<ShoppingCart>> list(){
         log.info("购物车查看...");
         LambdaQueryWrapper<ShoppingCart> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(ShoppingCart::getUserId,BaseContext.getCurrentId());
         queryWrapper.orderByAsc(ShoppingCart::getCreateTime);// 时间升序
         List<ShoppingCart> list = shoppingCartService.list(queryWrapper);
-        return R.success(list);
+        return Result.success(list);
     }
 }

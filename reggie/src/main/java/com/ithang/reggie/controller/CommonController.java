@@ -1,6 +1,6 @@
 package com.ithang.reggie.controller;
 
-import com.ithang.reggie.common.R;
+import com.ithang.reggie.common.Result;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -34,7 +34,7 @@ public class CommonController {
      * @return
      */
     @PostMapping("/upload")
-    public R<String> upload(MultipartFile file){
+    public Result<String> upload(MultipartFile file){
         // file 是一个临时文件，需要转存到指定位置，否则请求完成后临时文件会删除
         // 原始文件名
         String originalFilename = file.getOriginalFilename();// Xxxx.jpg
@@ -53,7 +53,7 @@ public class CommonController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return R.success(fileName);
+        return Result.success(fileName);
     }
 
     /**

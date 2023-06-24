@@ -2,9 +2,8 @@ package com.ithang.reggie.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ithang.reggie.entity.OrderDetail;
-import com.ithang.reggie.entity.Orders;
-import com.ithang.reggie.mapper.OrdersDetailMapper;
-import com.ithang.reggie.service.OrdersDetailService;
+import com.ithang.reggie.mapper.OrderDetailMapper;
+import com.ithang.reggie.service.OrderDetailService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,5 +14,5 @@ import org.springframework.stereotype.Service;
  * @Version 1.0
  */
 @Service
-public class OrdersDetailServiceImpl extends ServiceImpl<OrdersDetailMapper, OrderDetail> implements OrdersDetailService{
+public class OrdersDetailServiceImpl extends ServiceImpl<OrderDetailMapper, OrderDetail> implements OrderDetailService {
 }

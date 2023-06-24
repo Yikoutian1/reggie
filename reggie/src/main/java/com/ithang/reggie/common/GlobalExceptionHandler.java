@@ -27,24 +27,24 @@ public class GlobalExceptionHandler{
      * @return
      */
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-    public R<String> exceptionHandler(SQLIntegrityConstraintViolationException e){
+    public Result<String> exceptionHandler(SQLIntegrityConstraintViolationException e){
         log.error(e.getMessage());
         // 唯一约束
         if(e.getMessage().contains("Duplicate entry")) {
             String[] split = e.getMessage().split(" ");
             String msg ="用户" + split[2] + "已存在";
-            return R.error(msg);
+            return Result.error(msg);
         }
         // 试图安抚人员
-        return R.error("服务器繁忙，请稍后再试");
+        return Result.error("服务器繁忙，请稍后再试");
     }
     /**
      * 异常处理方法(可以返回到前端异常信息)
      * @return
      */
     @ExceptionHandler(CustomException.class)
-    public R<String> exceptionHandler(CustomException e){
+    public Result<String> exceptionHandler(CustomException e){
         log.error(e.getMessage());
-        return R.error(e.getMessage());
+        return Result.error(e.getMessage());
     }
 }

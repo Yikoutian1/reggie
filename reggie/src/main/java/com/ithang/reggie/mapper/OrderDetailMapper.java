@@ -5,5 +5,5 @@ import com.ithang.reggie.entity.OrderDetail;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface OrdersDetailMapper extends BaseMapper<OrderDetail> {
+public interface OrderDetailMapper extends BaseMapper<OrderDetail> {
 }

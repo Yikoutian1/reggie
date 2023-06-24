@@ -1,10 +1,23 @@
 package com.ithang.reggie.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.ithang.reggie.entity.Orders;
-import com.ithang.reggie.mapper.OrdersMapper;
-import com.ithang.reggie.service.OrdersService;
+import com.ithang.reggie.common.BaseContext;
+import com.ithang.reggie.common.CustomException;
+import com.ithang.reggie.entity.*;
+import com.ithang.reggie.mapper.OrderMapper;
+import com.ithang.reggie.service.*;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 /**
  * @ClassName OrderServiceImpl
@@ -13,6 +26,92 @@ import org.springframework.stereotype.Service;
  * @DATE 2023/6/20 020 19:33
  * @Version 1.0
  */
+@Slf4j
 @Service
-public class OrderServiceImpl extends ServiceImpl<OrdersMapper, Orders> implements OrdersService {
+public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implements OrderService {
+    @Autowired
+    private ShoppingCartService shoppingCartService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private AddressBookService addressBookService;
+
+    @Autowired
+    private OrderDetailService orderDetailService;
+
+    /**
+     * 用户下单
+     * @param order
+     */
+    @Transactional
+    public void submit(Orders order) {
+        //获得当前用户id
+        Long userId = BaseContext.getCurrentId();
+
+        //查询当前用户的购物车数据
+        LambdaQueryWrapper<ShoppingCart> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(ShoppingCart::getUserId,userId);
+        List<ShoppingCart> shoppingCarts = shoppingCartService.list(wrapper);
+
+        if(shoppingCarts == null || shoppingCarts.size() == 0){
+            throw new CustomException("购物车为空，不能下单");
+        }
+
+        //查询用户数据
+        User user = userService.getById(userId);
+
+        //查询地址数据
+        Long addressBookId = order.getAddressBookId();
+        AddressBook addressBook = addressBookService.getById(addressBookId);
+        if(addressBook == null){
+            throw new CustomException("用户地址信息有误，不能下单");
+        }
+        // 向订单表插入数据，一条数据(需要用到用户的信息跟地址信息)
+
+        // 用户id+时间戳 生成唯一订单
+        //String orderId = String.valueOf(userID) + System.currentTimeMillis();
+        long orderId = IdWorker.getId();//订单号
+
+        AtomicInteger amount = new AtomicInteger(0);
+
+        List<OrderDetail> orderDetails = shoppingCarts.stream().map((item) -> {
+            OrderDetail orderDetail = new OrderDetail();
+            orderDetail.setOrderId(orderId);
+            orderDetail.setNumber(item.getNumber());
+            orderDetail.setDishFlavor(item.getDishFlavor());
+            orderDetail.setDishId(item.getDishId());
+            orderDetail.setSetmealId(item.getSetmealId());
+            orderDetail.setName(item.getName());
+            orderDetail.setImage(item.getImage());
+            orderDetail.setAmount(item.getAmount());
+            amount.addAndGet(item.getAmount().multiply(new BigDecimal(item.getNumber())).intValue());
+            return orderDetail;
+        }).collect(Collectors.toList());
+        //保存前把需要设置的设置了,因为前端传的值不够
+
+        order.setId(orderId);
+        order.setOrderTime(LocalDateTime.now());
+        order.setCheckoutTime(LocalDateTime.now());
+        order.setStatus(2);
+        order.setAmount(new BigDecimal(amount.get()));//总金额
+        order.setUserId(userId);
+        order.setNumber(String.valueOf(orderId));
+        order.setUserName(user.getName());
+        order.setConsignee(addressBook.getConsignee());
+        order.setPhone(addressBook.getPhone());
+        order.setAddress((addressBook.getProvinceName() == null ? "" : addressBook.getProvinceName())
+                + (addressBook.getCityName() == null ? "" : addressBook.getCityName())
+                + (addressBook.getDistrictName() == null ? "" : addressBook.getDistrictName())
+                + (addressBook.getDetail() == null ? "" : addressBook.getDetail()));
+        //向订单表插入数据，一条数据
+        this.save(order);
+
+        //向订单明细表插入数据，多条数据
+        orderDetailService.saveBatch(orderDetails);
+
+        //清空购物车数据
+        shoppingCartService.remove(wrapper);
+    }
 }
