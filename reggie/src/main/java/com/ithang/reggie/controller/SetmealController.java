@@ -16,6 +16,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -104,5 +105,20 @@ public class SetmealController {
 
         List<Setmeal> list = setmealService.list(queryWrapper);
         return Result.success(list);
+    }
+    @PostMapping("/status/{status}")
+    public Result<String> status(@PathVariable("status") int status,@RequestParam("ids") List<Long> ids) {
+        LambdaQueryWrapper<Setmeal> queryWrapper = new LambdaQueryWrapper<>();
+        // in多组查询匹配
+        queryWrapper.in(ids!=null,Setmeal::getId,ids);
+        List<Setmeal> setmeals = setmealService.list(queryWrapper);
+        setmeals.forEach((item)->{
+            if(item!=null) {
+                item.setStatus(status);
+                // 更新的setmeal
+                setmealService.updateById(item);
+            }
+        });
+        return Result.success("更改成功");
     }
 }
