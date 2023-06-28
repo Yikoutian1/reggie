@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: javax.activation:activation:1.1.1" type="java-imported" external-system-id="Maven">
+    <properties groupId="javax.activation" artifactId="activation" version="1.1.1" />
+    <CLASSES>
+      <root url="jar://E:/maven/maven_repository/javax/activation/activation/1.1.1/activation-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://E:/maven/maven_repository/javax/activation/activation/1.1.1/activation-1.1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://E:/maven/maven_repository/javax/activation/activation/1.1.1/activation-1.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
