@@ -125,6 +125,7 @@ public class UserController {
 
         //获取session中phone字段对应的验证码
         //Object codeInSession = session.getAttribute(phone);
+
         // 从redis中获取验证码
         Object codeInSession = redisTemplate.opsForValue().get(phone);
 
@@ -147,6 +148,12 @@ public class UserController {
             // 这里我们将user存储进去，后面各项操作，我们会用，其中拦截器那边会判断用户是否登录，所以我们将这个存储进去，
             session.setAttribute("user",user.getId());
             // 登录成功需要返回user,在浏览器需要保存一份
+
+
+            // 如果登录成功,则删除redis缓存的验证码
+            redisTemplate.delete(phone);
+
+
             return Result.success(user);
         }
         return Result.error("验证失败");
