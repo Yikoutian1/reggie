@@ -162,6 +162,7 @@ public class DishController {
                 String categoryName = category.getName();
                 dishDto.setCategoryName(categoryName);
             }
+            String ttt;
             // 当前菜品的id
             Long dishId = item.getId();
             LambdaQueryWrapper<DishFlavor> wrapper = new LambdaQueryWrapper<>();
