@@ -12,12 +12,14 @@ import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/user")
@@ -26,7 +28,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
+    @Autowired
+    private RedisTemplate redisTemplate;
     /**
      * 发送手机短信验证码
      * @param user
@@ -46,8 +49,12 @@ public class UserController {
             //SMSUtils.sendMessage("瑞吉外卖","",phone,code);
             //邮箱
             EmailUtils.sendAuthCodeEmail(phone,code);
+
+
             //需要将生成的验证码保存到Session
-            session.setAttribute(phone,code);
+            //session.setAttribute(phone,code);
+            //存入Redis中,设置有效期为五分钟
+            redisTemplate.opsForValue().set(phone,code,5, TimeUnit.MINUTES);
 
             return Result.success("手机验证码短信发送成功");
         }
@@ -117,7 +124,11 @@ public class UserController {
         // 比对页面提交的验证码和session中
 
         //获取session中phone字段对应的验证码
-        Object codeInSession = session.getAttribute(phone);
+        //Object codeInSession = session.getAttribute(phone);
+        // 从redis中获取验证码
+        Object codeInSession = redisTemplate.opsForValue().get(phone);
+
+
         // 下面进行比对
         if (codeInSession != null && codeInSession.equals(code)) {
             LambdaQueryWrapper<User> userLambdaQueryWrapper = new LambdaQueryWrapper<>();

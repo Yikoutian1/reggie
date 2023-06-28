@@ -29,7 +29,7 @@ public class EmailUtils {
             //设置邮件的主题
             mail.setSubject("验证码");
             //设置邮件的内容
-            mail.setMsg("尊敬的用户:你好!\n 登陆验证码为:" + authCode+"\n"+"     (有效期为一分钟)");
+            mail.setMsg("尊敬的用户:你好!\n 登陆验证码为:" + authCode+"\n"+"     (有效期为五分钟)");
             mail.send();//发送
         } catch (EmailException e) {
             e.printStackTrace();
