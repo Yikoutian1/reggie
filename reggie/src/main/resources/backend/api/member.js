@@ -15,6 +15,15 @@ function enableOrDisableEmployee (params) {
   })
 }
 
+// 删除---删除员工
+function deleteEmployee (id) {
+  return $axios({
+    url: '/employee',
+    method: 'delete',
+    params: { id }
+  })
+}
+
 // 新增---添加员工
 function addEmployee (params) {
   return $axios({
@@ -32,6 +41,15 @@ function editEmployee (params) {
     data: { ...params }
   })
 }
+
+// // 删除当前列的接口
+// const deleCategory = (id) => {
+//   return $axios({
+//     url: '/category',
+//     method: 'delete',
+//     params: { id }
+//   })
+// }
 
 // 修改页面反查详情接口
 function queryEmployeeById (id) {

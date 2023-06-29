@@ -45,4 +45,4 @@ mybatis-plus:
       id-type: ASSIGN_ID
 #下载上传缓存照片路径basePath
 reggie:
-  path: D:\Data\reggiePhoto\
+  path: D:\Data\reggiePhoto\cache\
