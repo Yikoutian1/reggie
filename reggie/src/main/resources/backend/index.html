@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>后台</title>
+    <title>瑞吉外卖管理端</title>
     <link rel="shortcut icon" href="favicon.ico">
     <!-- 引入样式 -->
     <link rel="stylesheet" href="plugins/element-ui/index.css" />
@@ -36,7 +36,6 @@
           </div>
 
           <el-scrollbar wrap-class="scrollbar-wrapper">
-            <!--左侧菜单-->
             <el-menu
               :default-active="defAct"
               :unique-opened="false"
@@ -45,10 +44,8 @@
               text-color="#bfcbd9"
               active-text-color="#f4f4f5"
             >
-              <!--v-for遍历menuList列表-->
               <div v-for="item in menuList" :key="item.id">
-                <!--其实此处v-if不会执行-->
-                <el-submenu :index="item.id" v-if="item.children&& item.children.length>0">
+                <el-submenu :index="item.id" v-if="item.children && item.children.length>0">
                   <template slot="title">
                     <i class="iconfont" :class="item.icon"></i>
                     <span>{{item.name}}</span>
@@ -64,7 +61,6 @@
                     </el-menu-item
                   >
                 </el-submenu>
-                <!--执行的是这个v-else-->
                 <el-menu-item v-else :index="item.id" @click="menuHandle(item,false)">
                   <i class="iconfont" :class="item.icon"></i>
                   <span slot="title">{{item.name}}</span>
@@ -90,7 +86,6 @@
           </div>
           <div class="app-main" v-loading="loading">
             <div class="divTmp" v-show="loading"></div>
-            <!--左侧列表旁边的空白区域(右侧)显示部分,即页面切换-->
             <iframe
               id="cIframe"
               class="c_iframe"
@@ -112,7 +107,7 @@
     <!-- 引入axios -->
     <script src="plugins/axios/axios.min.js"></script>
     <script src="js/request.js"></script>
-    <script src="api/login.js"></script>
+    <script src="./api/login.js"></script>
     <script>
 
       new Vue({
@@ -160,7 +155,6 @@
               //   ],
               // },
             ],
-            // 初始页面,如果点击了其他的左侧按钮,则切换url地址
             iframeUrl: 'page/member/list.html',
             headTitle: '员工管理',
             goBackFlag: false,
@@ -188,7 +182,7 @@
             logoutApi().then((res)=>{
               if(res.code === 1){
                 localStorage.removeItem('userInfo')
-                window.location.href = 'page/login/login.html'
+                window.location.href = '/backend/page/login/login.html'
               }
             })
           },
@@ -202,7 +196,6 @@
           menuHandle(item, goBackFlag) {
             this.loading = true
             this.menuActived = item.id
-            // url跳转
             this.iframeUrl = item.url
             this.headTitle = item.name
             this.goBackFlag = goBackFlag
