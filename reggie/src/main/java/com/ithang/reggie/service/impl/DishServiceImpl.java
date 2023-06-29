@@ -2,6 +2,7 @@ package com.ithang.reggie.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.ithang.reggie.common.CustomException;
 import com.ithang.reggie.dto.DishDto;
 import com.ithang.reggie.entity.Dish;
 import com.ithang.reggie.entity.DishFlavor;
@@ -116,6 +117,31 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
             flavors.forEach(item->item.setDishId(dishDto.getId()));
             // 这个问题跟当时新增一模一样,上面的saveWithFlavor()函数
             dishFlavorService.saveBatch(flavors);
+        } catch (Exception e) {
+            throw new RuntimeException("保存失败", e);
+        }
+    }
+
+    /**
+     * 菜品口味的删除
+     * @param ids
+     */
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void deleteByIds(List<Long> ids) {
+        try {
+            LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+            queryWrapper.in(ids!=null,Dish::getId,ids);
+            List<Dish> list = this.list(queryWrapper);
+            list.forEach((item)->{
+                Integer status = item.getStatus();
+                if(status == 0){
+                    // 如果不在售卖
+                    this.removeById(item);
+                }else{
+                    throw new CustomException("删除菜品中有正在售卖菜品,无法全部删除");
+                }
+            });
         } catch (Exception e) {
             throw new RuntimeException("保存失败", e);
         }
