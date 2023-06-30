@@ -158,7 +158,7 @@ public class UserController {
         }
         return Result.error("验证失败");
     }
-    @PostMapping("/loginout")
+    @PostMapping("/logout")
     public Result<String> logout(HttpServletRequest request){
         request.getSession().removeAttribute("User");
         return Result.success("退出登录");

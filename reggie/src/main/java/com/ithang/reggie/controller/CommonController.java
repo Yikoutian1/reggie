@@ -49,6 +49,8 @@ public class CommonController {
             dir.mkdirs();
         }
         try {
+            //将临时文件转存到指定位置
+            // 注意 basePath = D:\img\， 所以fileName前不用加 "\"
             file.transferTo(new File(basePath + fileName));
         } catch (IOException e) {
             throw new RuntimeException(e);
