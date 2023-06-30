@@ -18,6 +18,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -87,7 +88,7 @@ public class DishController {
             }
             return dishDto;
         // 通过collect里面的Collectors.toList()转成list集合返回
-        }).collect(Collectors.toList());
+         }).collect(Collectors.toList());
 
         dishDtoPage.setRecords(list);
         return Result.success(dishDtoPage);
@@ -112,6 +113,13 @@ public class DishController {
     @PutMapping()
     public Result<String> update(@RequestBody DishDto dishDto){
         dishService.updateDishWithFlavor(dishDto);
+
+        // 清理所有菜品的缓存数据
+        //Set keys = redisTemplate.keys("dish_*");
+        // 只清理某个分类下面的缓存
+        String key = "dish_" + dishDto.getCategoryId() + "_" + "_1";
+        redisTemplate.delete(key);
+
         return Result.success("保存成功");
     }
     // 旧,下面是新的，添加设置口味数据
@@ -172,8 +180,8 @@ public class DishController {
             return dishDto;
         }).collect(Collectors.toList());
 
-        // 如果不存在,则将查询到的数据缓存到redis里面(设置缓存时间60分钟)
-        redisTemplate.opsForValue().set(key,dishDtoList,60, TimeUnit.MINUTES);
+        // 如果不存在,则将查询到的数据缓存到redis里面(设置缓存时间10分钟)
+        redisTemplate.opsForValue().set(key,dishDtoList,10, TimeUnit.MINUTES);
         return Result.success(dishDtoList);
     }
     @PostMapping("/status/{status}")
@@ -191,5 +199,15 @@ public class DishController {
             dishService.updateById(dish);
         });
         return Result.success("状态改变成功");
+    }
+    @DeleteMapping()
+    public Result<String> delete(@RequestParam("ids") List<Long> ids){
+        // 删除菜品,调用直接编写的deleteByIds
+        dishService.deleteByIds(ids);
+        // 删除菜品口味
+        LambdaQueryWrapper<DishFlavor> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.in(ids!=null,DishFlavor::getId,ids);
+        dishFlavorService.remove(queryWrapper);
+        return Result.success("删除成功");
     }
 }
