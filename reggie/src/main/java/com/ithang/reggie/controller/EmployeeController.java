@@ -6,6 +6,7 @@ import com.ithang.reggie.common.Result;
 import com.ithang.reggie.entity.Category;
 import com.ithang.reggie.entity.Employee;
 import com.ithang.reggie.service.EmployeeService;
+import com.ithang.reggie.utils.PasswordUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -40,7 +41,7 @@ public class EmployeeController {
             ,@RequestBody Employee employee){
         // 1、将页面提交的密码password进行md5加密处理
         String password = employee.getPassword();
-        password = DigestUtils.md5DigestAsHex(password.getBytes());
+        //password = DigestUtils.md5DigestAsHex(password.getBytes());
 
         // 2、根据页面提交的用户名username查询数据库
         LambdaQueryWrapper<Employee> wrapper = new LambdaQueryWrapper<>();
@@ -54,10 +55,13 @@ public class EmployeeController {
         }
 
         // 4、密码比对，如果不一-致则返回登录失败结果
-        if(!emp.getPassword().equals(password)){
-            return Result.error("登录失败");
+//        if(!emp.getPassword().equals(password)){
+//            return Result.error("登录失败");
+//        }
+        // 4、密码比对，如果不一-致则返回登录失败结果
+        if(!PasswordUtils.check(password,emp.getPassword())){
+            return Result.error("用户名或密码错误");
         }
-
         // 5、查看员工状态，如果为已禁用状态，则返回员工已禁用结果
         if(emp.getStatus() == 0){
             return Result.error("账号已禁用");
@@ -86,8 +90,8 @@ public class EmployeeController {
      */
     @PostMapping()
     public Result<String> save(HttpServletRequest request,@RequestBody Employee employee){
-        // 设置初始密码,md5加密处理
-        employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
+        // 设置初始密码,md5加盐加密处理,默认密码为123456
+        employee.setPassword(PasswordUtils.encrypt("123456"));
 //------------------------mybatis-plus自动填充------------------------------
 //        employee.setCreateTime(LocalDateTime.now());
 //        employee.setUpdateTime(LocalDateTime.now());
