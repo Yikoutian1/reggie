@@ -120,7 +120,7 @@ public class UserController {
         // 获取到验证码
         String code = map.get("code").toString();
         // 从Session中获取到保存的验证码
-        //  将session中获取到的验证码和前端提交过来的验证码进行比较，这样就可以实现一个验证的方式
+        // 将session中获取到的验证码和前端提交过来的验证码进行比较，这样就可以实现一个验证的方式
         // 比对页面提交的验证码和session中
 
         //获取session中phone字段对应的验证码
