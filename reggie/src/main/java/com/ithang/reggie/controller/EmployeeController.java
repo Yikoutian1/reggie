@@ -88,19 +88,10 @@ public class EmployeeController {
      * @param employee
      * @return
      */
-    @PostMapping()
+    @PostMapping
     public Result<String> save(HttpServletRequest request,@RequestBody Employee employee){
         // 设置初始密码,md5加盐加密处理,默认密码为123456
-        employee.setPassword(PasswordUtils.encrypt("123456"));
-//------------------------mybatis-plus自动填充------------------------------
-//        employee.setCreateTime(LocalDateTime.now());
-//        employee.setUpdateTime(LocalDateTime.now());
-//        // 获取当前登录用户id
-//        Long empId = (Long) request.getSession().getAttribute("employee");
-//        employee.setCreateUser(empId);
-//
-//        employee.setUpdateUser(empId);
-//----------------------------------------------------------------------
+        employee.setPassword(PasswordUtils.encrypt(employee.getPassword()));
         // 此时的save为IService中的,mybatis-plus里面的
         employeeService.save(employee);
         return Result.success("新增员工成功");
@@ -146,7 +137,7 @@ public class EmployeeController {
         log.info(employee.toString());
         long id = Thread.currentThread().getId();
         log.info("线程id为：{}",id);
-
+        employee.setPassword(PasswordUtils.encrypt(employee.getPassword()));
         // 这里使用的是mybatisPlus里面的sql
         employeeService.updateById(employee);
 
