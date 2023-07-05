@@ -53,7 +53,8 @@ public class PasswordUtils {
      */
     public static boolean check(String inputPassword, String finalPassword){
         //首先判断这两个参数到底有没有值,数据库中的最终密码是不是65位
-        if(StringUtils.hasLength(inputPassword) && StringUtils.hasLength(finalPassword)
+        if(StringUtils.hasLength(inputPassword)
+                && StringUtils.hasLength(finalPassword)
                 && finalPassword.length() == 65){
             //a.首先从最终的密码中得到盐值
             //使用$将finalPassword划分成两个部分，前面的32位的部分就是盐值

@@ -58,7 +58,7 @@ public class EmployeeController {
 //        if(!emp.getPassword().equals(password)){
 //            return Result.error("登录失败");
 //        }
-        // 4、密码比对，如果不一-致则返回登录失败结果
+        // 4、密码比对，如果不一致则返回登录失败结果，页面提交的密码与数据库的进行比对
         if(!PasswordUtils.check(password,emp.getPassword())){
             return Result.error("用户名或密码错误");
         }

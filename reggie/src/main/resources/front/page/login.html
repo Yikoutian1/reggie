@@ -82,7 +82,7 @@
                 const regex = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
                 if (regex.test(this.form.phone)) {
                     this.msgFlag = false
-                    //this.form.code = (Math.random()*1000000).toFixed(0)
+                    //this.form.code = (Math.random()*1000000).toFixed(0)【
                     sendApi({phone: this.form.phone})
                     // 不可重复发送验证码
                     this.sending = false
